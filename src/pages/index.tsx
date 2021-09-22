@@ -1,3 +1,4 @@
+
 import Head from 'next/head'
 
 
@@ -12,6 +13,8 @@ import useCandyMachine from '../hooks/use-candy-machine';
 import useWalletBalance from '../hooks/use-wallet-balance';
 import Countdown from 'react-countdown';
 import { WalletDisconnectButton, WalletMultiButton } from '@solana/wallet-adapter-react-ui';
+
+
 
 
 const Home = () => {
@@ -30,23 +33,27 @@ const Home = () => {
           Metaplex protocol which serve as an example app for a NFT candy machine app." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 class=" text-3xl text-white font-bold"> MINT BOREDAI </h1>
+
+
+
+      <h1 className=" text-3xl text-white font-bold"> MINT BOREDAI </h1>
       <br />
-      <img alt="team" class="flex-shrink-0 rounded-lg w-96 h-96 object-cover object-center mb-4" src="https://boredai-files.fra1.cdn.digitaloceanspaces.com/emerald.gif" />
+      <img alt="team" className="flex-shrink-0 rounded-lg w-96 h-96 object-cover object-center mb-4" src="https://boredai-files.fra1.cdn.digitaloceanspaces.com/emerald.gif" />
+
       {wallet.connected &&
-        <p class="p-2"><b>Address: </b> {shortenAddress(wallet.publicKey?.toBase58() || "")} </p>
+        <p className="p-2"><b>Address: </b> {shortenAddress(wallet.publicKey?.toBase58() || "")} </p>
       }
 
       {wallet.connected &&
         <>
-          <p class="p-2"><b>Balance:</b> {(balance || 0).toLocaleString()} SOL</p>
-          <p class="p-3"> <b>Available/Minted/Total:</b> {nftsData.itemsRemaining}/{nftsData.itemsRedeemed}/{nftsData.itemsAvailable}</p>
+          <p className="p-2"><b>Balance:</b> {(balance || 0).toLocaleString()} SOL</p>
+          <p className="p-3"> <b>Available/Minted/Total:</b> {nftsData.itemsRemaining}/{nftsData.itemsRedeemed}/{nftsData.itemsAvailable}</p>
         </>
       }
 
       <div>
         {wallet.connected &&
-          <button class=" p-4 ring-4 ring-opacity-90 ring-pink-100 animate-pulse  ml-3 inline-flex text-white bg-green-500 border-0 py-2 px-4 focus:outline-none hover:bg-green-600 hover:text-white rounded text-lg" type="button"
+          <button className=" p-4 ring-4 ring-opacity-90 ring-pink-100 animate-pulse  ml-3 inline-flex text-white bg-green-500 border-0 py-2 px-4 focus:outline-none hover:bg-green-600 hover:text-white rounded text-lg" type="button"
             disabled={isSoldOut || isMinting || !isActive}
             onClick={onMint}
           >
