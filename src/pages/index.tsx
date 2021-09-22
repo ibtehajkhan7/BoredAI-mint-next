@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+
 import { useState } from "react";
 import { Toaster } from 'react-hot-toast';
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -21,7 +22,7 @@ const Home = () => {
   const { isSoldOut, mintStartDate, isMinting, onMint, nftsData } = useCandyMachine()
 
   return (
-    <main className="p-5">
+    <main className="p-5 text-white flex flex-col justify-center items-center h-screen text-transparent bg-gradient-to-r from-gray-900 via-purple-800 to-green-200">
       <Toaster />
       <Head>
         <title> Mint BoredAI </title>
@@ -29,20 +30,23 @@ const Home = () => {
           Metaplex protocol which serve as an example app for a NFT candy machine app." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1 class=" text-3xl text-white font-bold"> MINT BOREDAI </h1>
+      <br />
+      <img alt="team" class="flex-shrink-0 rounded-lg w-96 h-96 object-cover object-center mb-4" src="https://boredai-files.fra1.cdn.digitaloceanspaces.com/emerald.gif" />
       {wallet.connected &&
-        <p>Address: {shortenAddress(wallet.publicKey?.toBase58() || "")}</p>
+        <p class="p-2"><b>Address: </b> {shortenAddress(wallet.publicKey?.toBase58() || "")} </p>
       }
 
       {wallet.connected &&
         <>
-          <p>Balance: {(balance || 0).toLocaleString()} SOL</p>
-          <p>Available/Minted/Total: {nftsData.itemsRemaining}/{nftsData.itemsRedeemed}/{nftsData.itemsAvailable}</p>
+          <p class="p-2"><b>Balance:</b> {(balance || 0).toLocaleString()} SOL</p>
+          <p class="p-3"> <b>Available/Minted/Total:</b> {nftsData.itemsRemaining}/{nftsData.itemsRedeemed}/{nftsData.itemsAvailable}</p>
         </>
       }
 
       <div>
         {wallet.connected &&
-          <button type="button"
+          <button class=" p-4 ring-4 ring-opacity-90 ring-pink-100 animate-pulse  ml-3 inline-flex text-white bg-green-500 border-0 py-2 px-4 focus:outline-none hover:bg-green-600 hover:text-white rounded text-lg" type="button"
             disabled={isSoldOut || isMinting || !isActive}
             onClick={onMint}
           >
@@ -61,7 +65,7 @@ const Home = () => {
         }
       </div>
 
-      <div className="flex float-right border-solid space-x-5">
+      <div className=" p-5 flex float-right border-solid space-x-5">
         <WalletMultiButton />
         <WalletDisconnectButton />
       </div>
