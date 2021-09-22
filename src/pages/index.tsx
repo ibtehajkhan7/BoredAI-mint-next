@@ -32,6 +32,7 @@ const Home = () => {
         <meta name="description" content="Solana Candy Machine is an open-source project using NextJS, 
           Metaplex protocol which serve as an example app for a NFT candy machine app." />
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"></link>
       </Head>
 
 
