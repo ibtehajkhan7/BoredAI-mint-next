@@ -24,7 +24,7 @@ const Home = () => {
     <main className="p-5">
       <Toaster />
       <Head>
-        <title>Solana Candy Machine</title>
+        <title> Mint BoredAI </title>
         <meta name="description" content="Solana Candy Machine is an open-source project using NextJS, 
           Metaplex protocol which serve as an example app for a NFT candy machine app." />
         <link rel="icon" href="/favicon.ico" />
@@ -47,9 +47,9 @@ const Home = () => {
             onClick={onMint}
           >
             {isSoldOut ? (
-              "SOLD OUT"
+              "SORRY, WE ARE SOLD OUT"
             ) : isActive ?
-              <span>MINT {isMinting && 'LOADING...'}</span> :
+              <span>MINT {isMinting && 'MINTING...'}</span> :
               <Countdown
                 date={mintStartDate}
                 onMount={({ completed }) => completed && setIsActive(true)}
@@ -61,7 +61,7 @@ const Home = () => {
         }
       </div>
 
-      <div className="flex float-right space-x-5">
+      <div className="flex float-right border-solid space-x-5">
         <WalletMultiButton />
         <WalletDisconnectButton />
       </div>
