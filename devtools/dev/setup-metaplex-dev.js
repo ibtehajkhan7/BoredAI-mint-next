@@ -36,7 +36,7 @@ async function setupMetaplexDev() {
   splittedContent[5] = `metaplex create_candy_machine --env devnet --keypair /Users/ashish/.config/solana/devnet.json --price ${mintPrice || 1} > ./logs/dev/candy-machine-log.txt`
 
   const startDate = await getStartDate()
-  splittedContent[7] = `metaplex update_candy_machine -d "${startDate || '16 Sep 2021 00:00:00'}" --env devnet --keypair /Users/ashish/.config/solana/devnet.json > ./logs/dev/candy-machine-start-date.txt`
+  splittedContent[7] = `metaplex update_candy_machine -d "${startDate || '26 Sep 2021 11:11:00'}" --env devnet --keypair /Users/ashish/.config/solana/devnet.json > ./logs/dev/candy-machine-start-date.txt`
 
   fs.unlinkSync('./devtools/dev/setup-metaplex-dev.sh')
   fs.writeFileSync('./devtools/dev/setup-metaplex-dev.sh', splittedContent.join(`\n`))
