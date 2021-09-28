@@ -37,10 +37,12 @@ const Home = () => {
 
 
 
-      <h1 className=" text-3xl text-white font-bold"> MINT BOREDAI </h1>
+      <h1 className=" text-4xl text-white font-bold"> MINT BOREDAI </h1>
+
       <br />
       <img alt="team" className="flex-shrink-0 rounded-lg w-96 h-96 object-cover object-center mb-4" src="https://boredai-files.fra1.cdn.digitaloceanspaces.com/GIfs/GIfs/main.gif" />
-
+      <br />
+      <p className=" text-xl text-white "> <b>Mint Cost: </b>2.22 SOL </p>
       {wallet.connected &&
         <p className="p-2"><b>Address: </b> {shortenAddress(wallet.publicKey?.toBase58() || "")} </p>
       }
