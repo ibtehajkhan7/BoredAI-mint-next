@@ -50,7 +50,9 @@ const Home = () => {
       {wallet.connected &&
         <>
           <p className="p-2"><b>Balance:</b> {(balance || 0).toLocaleString()} SOL</p>
-          <p className="p-3"> <b>Available/Minted/Total:</b> {nftsData.itemsRemaining}/{nftsData.itemsRedeemed}/{nftsData.itemsAvailable}</p>
+          <p className="p-3"> <b>Total:</b>{nftsData.itemsAvailable}</p>
+          <p className="p-3"> <b>Minted:</b>{nftsData.itemsRedeemed}</p>
+          <p className="p-3"> <b>Available:</b> {nftsData.itemsRemaining}</p>
         </>
       }
 
